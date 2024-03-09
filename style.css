@@ -1,22 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500&display=swap");
+
 * {
   margin: 0;
 }
+:root {
+  --background: #3b405a;
+  --btn-response: #2b5c81;
+  --btn-good-answer: #1ecdad;
+  --btn-bad-answer: #e96f66;
+  --btn-change-page: #e9afa3;
+  --font-color: #ffffff;
+}
 
 body {
-  height: 100vh;
   border: 5px solid purple;
+  background-color: var(--background);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /************************** header */
 
 #main-page {
-  border: 2px red solid;
+  border: 2px red;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
-
-img {
+/* header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+} */
+header img {
   border: 2px blue solid;
+  width: 224px;
+  height: 224px;
+}
+p {
+  color: var(--font-color);
+  font-size: 3rem;
 }
 
 ul {
@@ -30,11 +55,31 @@ ul {
 
 li {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+button {
+  width: 167px;
+  height: 60px;
+  text-decoration: none;
+  color: var(--font-color);
+  background-color: var(--btn-change-page);
+  font-size: 2.5rem;
+  border-radius: 33px;
+}
+
+/* **********************************Section result */
+#section-result {
+  display: none;
+}
+
 /*********************************************** main */
 
 main {
   border: 2px black solid;
+  display: none;
 }
 
 #btn-response {
@@ -44,9 +89,9 @@ main {
 ul {
   display: flex;
 }
-
-#btn-validate {
-  display: flex;
+/************************** footer */
+#btn-change-page {
+  display: none;
   flex-direction: column;
   width: 300px;
   margin: 0 auto;
