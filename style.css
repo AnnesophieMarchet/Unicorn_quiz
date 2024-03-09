@@ -88,7 +88,9 @@ main {
 #btn-response {
   border: 3px grey solid;
 }
-
+#main {
+  display: none;
+}
 /************************** footer */
 #btn-replay-quiz {
   display: none;
