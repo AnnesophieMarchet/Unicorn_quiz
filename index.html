@@ -15,7 +15,14 @@
             <p>Unicorn</p>
             <p>Quizz</p>
           </li>
-          <li><button>Start</button></li>
+          <li>
+            <input
+              onclick="changeText()"
+              type="button"
+              value="Start"
+              id="btn-start"
+            />
+          </li>
         </ul>
       </div>
       <div id="section-result">
@@ -43,8 +50,14 @@
     </main>
     <footer>
       <div id="btn-change-page">
-        <button>Validate</button>
+        <input
+          onclick="changeText-2()"
+          type="button"
+          value="Try again"
+          id="btn-replay-quiz"
+        />
       </div>
     </footer>
+    <script src="./script.js"></script>
   </body>
 </html>

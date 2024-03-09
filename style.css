@@ -63,7 +63,7 @@ li {
   margin-bottom: 40px;
 }
 
-button {
+#btn-start {
   width: 167px;
   height: 60px;
   text-decoration: none;
@@ -90,14 +90,22 @@ main {
 }
 
 /************************** footer */
-#btn-change-page {
+#btn-replay-quiz {
   display: none;
-  flex-direction: column;
-  width: 300px;
+  width: 600px;
   margin: 0 auto;
+  width: 220px;
+  height: 60px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: var(--font-color);
+  background-color: var(--btn-change-page);
+  font-size: 2.5rem;
+  border-radius: 33px;
+  text-align: center;
 }
 
-@media screen and (min-width: 390px) {
+@media screen and (min-width: 391px) {
   #main-page {
     flex-direction: row;
   }
