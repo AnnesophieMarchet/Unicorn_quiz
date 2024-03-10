@@ -18,32 +18,20 @@ function displayMain() {
   let questionDisplay = document.getElementById("main");
   let headerDisplay = document.getElementById("main-page");
 
-  // @ts-ignore
   if (element.value === "Validate") {
-    // @ts-ignore
     questionDisplay.style.display = "block";
-    // @ts-ignore
     headerDisplay.style.display = "none";
-
-    // @ts-ignore
     element.value = "Start";
   } else {
-    // headerDisplay.style.display = "block";
-    // @ts-ignore
     questionDisplay.style.display = "block";
-    // @ts-ignore
     element.value = "Validate";
   }
 }
-// questionDisplay.style.display = "block";
+
 function changeText() {
   let element = document.getElementById("btn-start");
-
-  // @ts-ignore
   if (element.value == "Validate") {
-    // @ts-ignore
     element.value = "Start";
-    // @ts-ignore
   } else element.value = "Validate";
 }
 
