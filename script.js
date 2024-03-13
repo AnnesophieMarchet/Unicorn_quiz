@@ -22,8 +22,12 @@ startBouton.addEventListener("click", () => {
 console.log(Questions[0].question);
 function createQuestion(question) {
   let questionDisplay = document.createElement("p");
+  questionId.innerText = "";
   questionDisplay.innerText = question;
+
   questionId.appendChild(questionDisplay);
 }
 
 createQuestion(Questions[0].question);
+
+function createResponse() {}
