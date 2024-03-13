@@ -11,17 +11,20 @@ body {
     background-color: #3A405A;
 }
 
-header {
+#header {
     display: flex;
-    justify-content: center;
-    margin: auto;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* margin: auto; */
     background-color: #3A405A;
+    align-items: center;
+    
 }
 
-img {
-    width: 190px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+#logo {
+    width: 250px;
+    margin: 40px 0px;
+  
 }
 
 ul {
@@ -30,6 +33,7 @@ ul {
     align-items: center;
     margin: auto;
     flex-direction: column;
+    height: 500px;
 
 }
 
