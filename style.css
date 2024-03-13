@@ -29,11 +29,11 @@ body {
 
 ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin: auto;
     flex-direction: column;
-    height: 500px;
+    height: 300px;
 
 }
 
