@@ -2,7 +2,7 @@ const Questions = [
   {
     question: "Unicorn can eat corn ?",
     answers: ["No", "They", "Do", "Yes"],
-    correct: "They"
+    correct: "Do"
   },
   {
     question:
