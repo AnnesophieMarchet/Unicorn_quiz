@@ -5,6 +5,10 @@ const displayBoutonFooter = document.getElementById("btn-div-end");
 const startBouton = document.getElementById("sButton");
 const nextBouton = document.getElementById("nButton");
 const questionId = document.getElementById("question");
+const answers0 = document.getElementById("b1")
+const answers1 = document.getElementById("b2")
+const answers2 = document.getElementById("b3")
+const answers3 = document.getElementById("b4")
 
 // function displayStartButton() {
 //   startBouton.style.display = "none";
@@ -31,5 +35,19 @@ function createQuestion(question) {
 
 createQuestion(Questions[0].question);
 
-function createResponse() {}
+function createResponse(answers) {
+  answers0.innerText = answers[0]
+  answers1.innerText = answers[1]
+  answers2.innerText = answers[2]
+  answers3.innerText = answers[3]
+}
+createResponse(Questions[0].answers)
 
+let goodAnswer = document.getElementById("b3");
+goodAnswer.addEventListener("click", function () {
+  goodAnswer.style.backgroundColor = "green";
+});
+let wrongAnswer = document.getElementById("b1");
+wrongAnswer.addEventListener("click", function () {
+  wrongAnswer.style.backgroundColor = "red";
+});
