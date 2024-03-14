@@ -1,3 +1,4 @@
+
 const displayHeader = document.getElementById("header");
 const displayMain = document.getElementById("main");
 const displayBoutonFooter = document.getElementById("btn-div-end");
