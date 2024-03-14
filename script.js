@@ -42,11 +42,11 @@ function createResponse(answers) {
 }
 createResponse(Questions[0].answers)
 
-var goodAnswer = document.getElementById("b3");
+let goodAnswer = document.getElementById("b3");
 goodAnswer.addEventListener("click", function () {
   goodAnswer.style.backgroundColor = "green";
 });
-var wrongAnswer = document.getElementById("b1");
+let wrongAnswer = document.getElementById("b1");
 wrongAnswer.addEventListener("click", function () {
   wrongAnswer.style.backgroundColor = "red";
 });
