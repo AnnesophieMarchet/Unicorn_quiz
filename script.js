@@ -1,3 +1,4 @@
+
 const displayHeader = document.getElementById("header");
 const displayMain = document.getElementById("main");
 const displayBoutonFooter = document.getElementById("btn-div-end");
@@ -31,3 +32,4 @@ function createQuestion(question) {
 createQuestion(Questions[0].question);
 
 function createResponse() {}
+
