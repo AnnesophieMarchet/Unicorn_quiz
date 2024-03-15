@@ -1,8 +1,8 @@
 const Questions = [
   {
-    question: "Comment déclarer une variable qui ne peut pas être modifiée ?",
-    answers: ["const", "let", "var", "lette"],
-    correct: "const",
+    question: "Unicorn can eat corn ?",
+    answers: ["No", "They", "Do", "Yes"],
+    correct: "Do"
   },
   {
     question:
