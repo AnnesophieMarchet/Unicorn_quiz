@@ -9,6 +9,8 @@ const answers0 = document.getElementById("b1")
 const answers1 = document.getElementById("b2")
 const answers2 = document.getElementById("b3")
 const answers3 = document.getElementById("b4")
+const titre1 = document.getElementById("titre")
+const poney = document.getElementById("logo")
 
 // function displayStartButton() {
 //   startBouton.style.display = "none";
@@ -22,9 +24,23 @@ startBouton.addEventListener("click", () => {
   displayHeader.style.display = "none";
   displayMain.style.display = "block";
   nextBouton.style.display = "block";
+  createQuestion(Questions[0].question);
+  createResponse(Questions[0].answers)
+
 });
 
-console.log(Questions[0].question);
+nextBouton.addEventListener("click", () => {
+  displayHeader.style.display = "block";
+  displayMain.style.display = "block";
+  nextBouton.style.display = "block";
+  startBouton.style.display = "none";
+  titre1.style.display = "none";
+  poney.style.display = "none";
+  createQuestion(Questions[1].question);
+  createResponse(Questions[1].answers)
+});
+
+
 function createQuestion(question) {
   let questionDisplay = document.createElement("p");
   questionId.innerText = "";
@@ -33,7 +49,6 @@ function createQuestion(question) {
   questionId.appendChild(questionDisplay);
 }
 
-createQuestion(Questions[0].question);
 
 function createResponse(answers) {
   answers0.innerText = answers[0]
@@ -41,7 +56,6 @@ function createResponse(answers) {
   answers2.innerText = answers[2]
   answers3.innerText = answers[3]
 }
-createResponse(Questions[0].answers)
 
 let goodAnswer = document.getElementById("b3");
 goodAnswer.addEventListener("click", function () {
@@ -52,14 +66,14 @@ wrongAnswer.addEventListener("click", function () {
   wrongAnswer.style.backgroundColor = "red";
 });
 
-let wrongAnswer2= document.getElementById("b1");
+let wrongAnswer2 = document.getElementById("b2");
 wrongAnswer2.addEventListener("click", function () {
   wrongAnswer2.style.backgroundColor = "red";
 });
-
-let wrongAnswer3 = document.getElementById("b1");
+let wrongAnswer3 = document.getElementById("b4");
 wrongAnswer3.addEventListener("click", function () {
   wrongAnswer3.style.backgroundColor = "red";
 });
 
 let nextQuest 
+
