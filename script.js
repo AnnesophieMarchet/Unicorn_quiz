@@ -51,3 +51,15 @@ let wrongAnswer = document.getElementById("b1");
 wrongAnswer.addEventListener("click", function () {
   wrongAnswer.style.backgroundColor = "red";
 });
+
+let wrongAnswer2= document.getElementById("b1");
+wrongAnswer2.addEventListener("click", function () {
+  wrongAnswer2.style.backgroundColor = "red";
+});
+
+let wrongAnswer3 = document.getElementById("b1");
+wrongAnswer3.addEventListener("click", function () {
+  wrongAnswer3.style.backgroundColor = "red";
+});
+
+let nextQuest 
