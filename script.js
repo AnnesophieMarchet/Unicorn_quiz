@@ -70,3 +70,6 @@ let wrongAnswer3 = document.getElementById("b4");
 wrongAnswer3.addEventListener("click", function () {
   wrongAnswer3.style.backgroundColor = "#e96f66";
 });
+
+let nextQuest 
+
