@@ -16,7 +16,7 @@ const poney = document.getElementById("logo");
 // }
 // displayStartButton();
 // startBouton.style.display = "none";
-
+let count = 0;
 let questionIndex = 0;
 displayMain.style.display = "none";
 nextBouton.style.display = "none";
@@ -61,6 +61,8 @@ function createResponse(answers) {
     buttonResponse.addEventListener("click", () => {
       // buttonResponse.innerText = answer;
       // divResponse.innerText = "";
+
+      count++;
       let isCorrect = answer === Questions[questionIndex].correct;
 
       if (isCorrect) {
@@ -74,6 +76,8 @@ function createResponse(answers) {
       });
     });
   }
+
+  console.log(count++);
   // questionIndex++;
 
   // answers0.innerText = answers[0];
