@@ -68,6 +68,10 @@ function createResponse(answers) {
       } else {
         buttonResponse.style.backgroundColor = "#e96f66";
       }
+      let responseButtons = document.querySelectorAll(".grid-container button");
+      responseButtons.forEach((btn) => {
+        btn.disabled = true;
+      });
     });
   }
   // questionIndex++;
