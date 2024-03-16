@@ -28,7 +28,7 @@ startBouton.addEventListener("click", () => {
 });
 
 nextBouton.addEventListener("click", () => {
-  displayHeader.style.display = "block";
+  displayHeader.style.display = "none";
   displayMain.style.display = "block";
   nextBouton.style.display = "block";
   startBouton.style.display = "none";
