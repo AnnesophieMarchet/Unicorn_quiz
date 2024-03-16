@@ -16,7 +16,7 @@ const poney = document.getElementById("logo");
 // }
 // displayStartButton();
 // startBouton.style.display = "none";
-let count = 0;
+
 let questionIndex = 0;
 displayMain.style.display = "none";
 nextBouton.style.display = "none";
@@ -62,22 +62,17 @@ function createResponse(answers) {
       // buttonResponse.innerText = answer;
       // divResponse.innerText = "";
       let isCorrect = answer === Questions[questionIndex].correct;
-      let responseButtons = document.querySelectorAll(".grid-container button");
-      count++;
 
-      // passe les boutons  non clickable
-      responseButtons.forEach((btn) => {
-        btn.disabled = true;
-      });
-
-      // lors du click couleu du bouton
       if (isCorrect) {
         buttonResponse.style.backgroundColor = "#1ecdad";
       } else {
         buttonResponse.style.backgroundColor = "#e96f66";
       }
+      let responseButtons = document.querySelectorAll(".grid-container button");
+      responseButtons.forEach((btn) => {
+        btn.disabled = true;
+      });
     });
-    console.log(count);
   }
   // questionIndex++;
 
