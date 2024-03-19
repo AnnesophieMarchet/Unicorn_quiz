@@ -106,10 +106,13 @@ function createResponse(answers) {
       if (isCorrect) {
         unDisabledNextButtonFooter();
         buttonResponse.style.backgroundColor = "#1ecdad";
+        buttonResponse.style.border = "none";
         count++;
         console.log(count);
       } else {
         buttonResponse.style.backgroundColor = "#e96f66";
+        buttonResponse.style.border = "none";
+
         unDisabledNextButtonFooter();
       }
       let responseButtons = document.querySelectorAll(".grid-container button");
@@ -124,9 +127,11 @@ function createResponse(answers) {
   function endQuiz() {
     if (questionIndex >= Questions.length) {
       confetti();
-      nextBouton.innerText = "The End";
+      nextBouton.innerText = "Try Again";
       let percentage = (count / Questions.length) * 100;
-      questionDisplay.textContent = `Good Answers : ${count} ${percentage}%`;
+      questionDisplay.textContent = `Good Answers : ${percentage}%`;
+      questionDisplay.style.fontSize = "5rem";
+      questionDisplay.style.textDecoration = "underline";
 
       // questionDisplay.textContent = `Good Answers:${count}`;
       resetQuiz();

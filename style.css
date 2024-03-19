@@ -29,7 +29,7 @@ body {
 
 #logo {
   width: 250px;
-  margin: 40px 0px;
+  margin: 80px 0px;
 }
 
 ul {
@@ -67,15 +67,11 @@ li {
 #sButton:hover {
   scale: 1.05;
   transition: 0.4s;
-
   background-color: #c1dcd5;
 }
-#b1:hover,
-#b2:hover,
-#b3:hover,
-#b4:hover {
-  scale: 0.98;
-  transition: 0.4s;
+button:hover {
+  scale: 1.03;
+  transition: 0.5s;
 }
 
 #question {
@@ -87,6 +83,7 @@ li {
   font-size: 2.5rem;
   text-align: center;
   height: 60%;
+  min-width: 385px;
   /* width: 300px;
     height: 300px; */
 }
@@ -111,6 +108,13 @@ p {
   border-radius: 15px;
 }
 
+button:hover {
+  scale: 1.03;
+  transition: 0.5s;
+  border: 1.5px solid rgb(37, 96, 215);
+  background-color: #1882d3;
+  color: #e8f1ef;
+}
 #btn-div-end {
   display: flex;
   justify-content: center;
@@ -127,7 +131,7 @@ p {
   background-color: #e9afa3;
   color: white;
   width: 180px;
-  height: 60px;
+  height: 50px;
   font-size: 2rem;
   border: none;
 }
@@ -135,19 +139,39 @@ p {
   scale: 0.98;
 }
 
-@media screen and (min-width: 700px) {
+#btn-div-end {
+  min-width: 390px;
+  min-height: 150px;
+
+  align-items: flex-end;
+}
+
+footer {
+  height: 200px;
+}
+@media screen and (min-width: 800px) {
   #header {
     flex-direction: row;
     margin-left: 100px;
   }
 
   .grid-container > button {
-    width: 520px;
+    width: 400px;
     height: 80px;
     font-size: 1.5rem;
   }
+
   #nButton {
     margin-top: 30px;
+    width: 360px;
+    height: 60;
+  }
+  button:hover {
+    scale: 1.03;
+    transition: 0.5s;
+    border: 1.5px solid rgb(37, 96, 215);
+    background-color: #1882d3;
+    color: #e8f1ef;
   }
 
   #question {
@@ -166,5 +190,9 @@ p {
   #sButton {
     width: 180px;
     height: 60px;
+  }
+
+  #btn-div-end {
+    margin-bottom: 40px;
   }
 }
