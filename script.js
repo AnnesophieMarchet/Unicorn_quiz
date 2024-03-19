@@ -91,7 +91,9 @@ function createResponse(answers) {
     if (questionIndex >= Questions.length) {
       confetti();
       nextBouton.innerText = "The End";
-      questionDisplay.textContent = `Good Answers: ${count}`;
+      let percentage = (count / Questions.length) * 100;
+      questionDisplay.textContent = `Good Answers : ${count} ${percentage}%`;
+      // questionDisplay.textContent = `Good Answers:${count}`;
       resetQuiz();
       return;
     }
