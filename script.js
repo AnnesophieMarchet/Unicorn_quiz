@@ -96,12 +96,10 @@ function createResponse(answers) {
       return;
     }
   }
-
   function resetQuiz() {
     count = 0;
     questionIndex = 0;
   }
-
   // confetti();
   // validateInput.value = "The End";
   // maDiv.style.display = "none";
