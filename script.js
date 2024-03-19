@@ -70,3 +70,19 @@ let wrongAnswer3 = document.getElementById("b4");
 wrongAnswer3.addEventListener("click", function () {
   wrongAnswer3.style.backgroundColor = "#e96f66";
 });
+
+
+const currentQuestionIndex = 0;
+
+function afficherQuestion(index) {
+  const questionElement = document.getElementById("question");
+  const optionsElement = document.getElementById("answers");
+
+  questionElement.textContent = questions[index].question;
+  optionsElement.innerHTML = "";
+
+  questions[index].options.forEach(function (option) {
+    const div = document.createElement("div");
+    div.textContent = option;
+    optionsElement.appendChild(div);
+  });
