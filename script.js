@@ -4,12 +4,12 @@ const displayBoutonFooter = document.getElementById("btn-div-end");
 const startBouton = document.getElementById("sButton");
 const nextBouton = document.getElementById("nButton");
 const questionId = document.getElementById("question");
-//const answers0 = document.getElementById("b1");
-//const answers1 = document.getElementById("b2");
-//const answers2 = document.getElementById("b3");
-//const answers3 = document.getElementById("b4");
-//const titre1 = document.getElementById("titre");
-//const poney = document.getElementById("logo");
+const answers0 = document.getElementById("b1");
+const answers1 = document.getElementById("b2");
+const answers2 = document.getElementById("b3");
+const answers3 = document.getElementById("b4");
+const titre1 = document.getElementById("titre");
+const poney = document.getElementById("logo");
 
 // function displayStartButton() {
 //   startBouton.style.display = "none";
