@@ -44,11 +44,12 @@ nextBouton.addEventListener("click", () => {
   questionIndex++;
   createQuestion(Questions[questionIndex].question);
   createResponse(Questions[questionIndex].answers);
+
   nextBouton.disabled = true;
 });
 
+let questionDisplay = document.createElement("p");
 function createQuestion(question) {
-  let questionDisplay = document.createElement("p");
   questionId.innerText = "";
   questionDisplay.innerText = question;
   questionId.appendChild(questionDisplay);
@@ -84,14 +85,46 @@ function createResponse(answers) {
     });
   }
 
-  console.log(count++);
-  // questionIndex++;
+  nextBouton.addEventListener("click", endQuiz);
 
-  // answers0.innerText = answers[0];
-  // answers1.innerText = answers[1];
-  // answers2.innerText = answers[2];
-  // answers3.innerText = answers[3];
+  function endQuiz() {
+    if (questionIndex >= Questions.length) {
+      confetti();
+      nextBouton.innerText = "The End";
+      questionDisplay.textContent = `Good Answers: ${count}`;
+      resetQuiz();
+      return;
+    }
+  }
+
+  function resetQuiz() {
+    count = 0;
+    questionIndex = 0;
+  }
+
+  // confetti();
+  // validateInput.value = "The End";
+  // maDiv.style.display = "none";
+  // responseDisplay.style.display = "none";
+  // mainDisplay.style.height = "544px";
+
+  // divQuiznResult.style.display = "block";
+
+  // let pResult = document.createElement("p");
+  // pResult.textContent = `Nombre de bonnes réponses : ${count}`;
+  // divQuiznResult.appendChild(pResult);
+
+  // let pResult = document.createElement("p");
+  // pResult.textContent = ` Votre résultat est + `;
 }
+
+// console.log(count++);
+// questionIndex++;
+
+// answers0.innerText = answers[0];
+// answers1.innerText = answers[1];
+// answers2.innerText = answers[2];
+// answers3.innerText = answers[3];
 
 // let goodAnswer = document.getElementById("b3");
 // goodAnswer.addEventListener("click", function () {
