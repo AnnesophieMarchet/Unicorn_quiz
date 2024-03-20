@@ -142,7 +142,7 @@ function createResponse(answers) {
 
   function endQuiz() {
     if (questionIndex >= Questions.length) {
-      for (let index = 0; index <= Math.floor(Math.random() * 20); index++) {
+      for (let index = 0; index <= Math.floor(Math.random() * 10); index++) {
         confetti({
           particleCount: 150, // Nombre de confetti à lancer
           spread: 360, // Angle maximal de dispersion des confettis
@@ -151,7 +151,7 @@ function createResponse(answers) {
             x: Math.random() - 0.2, // Position initiale aléatoire des confettis sur l'axe horizontal
             y: Math.random(), // Position initiale légèrement plus élevée sur l'axe vertical
           },
-          colors: ["#1ecdad", "#e9afa3", "#1882d3"], // Couleurs des confettis
+          colors: ["#1ecdad", "#e9afa3", "#1882d3", "#e96f66"], // Couleurs des confettis
           shapes: [pathShape, textShape], // Formes des confettis
           scalar: 2, // Taille des confettis
         });
