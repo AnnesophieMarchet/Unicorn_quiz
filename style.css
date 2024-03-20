@@ -171,7 +171,7 @@ footer {
   }
 
   .grid-container > button {
-    width: 400px;
+    width: 380px;
     height: 80px;
     font-size: 1.5rem;
   }
@@ -191,6 +191,10 @@ footer {
 
   #question {
     height: 60%;
+    max-width: 900px;
+  }
+  p {
+    margin-left: 50px;
   }
   #logo {
     width: 400px;
@@ -216,11 +220,20 @@ footer {
     padding: 60px 100px;
     font-size: 4rem;
     border-radius: 20px;
+    /* background: rgb(251, 63, 196);
+    background: radial-gradient(
+      circle,
+      rgba(251, 63, 196, 1) 10%,
+      rgba(246, 67, 200, 1) 24%,
+      rgba(216, 90, 224, 1) 39%,
+      rgba(93, 89, 217, 1) 64%,
+      rgba(86, 201, 190, 1) 97%
+    ); */
     /* background-color: #1882d3; */
   }
 
   #pictureUnicornQuestion {
-    margin-right: 50px;
+    margin-right: 100px;
     display: block;
   }
 }
