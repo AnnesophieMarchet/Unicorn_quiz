@@ -94,10 +94,16 @@ nextBouton.addEventListener("click", () => {
 });
 
 let questionDisplay = document.createElement("p");
+let divDisplayUnicorn = document.createElement("img");
 
 function createQuestion(question) {
   questionId.innerText = "";
   questionDisplay.innerText = question;
+  divDisplayUnicorn.src = "./assets/unicorn-picture.svg";
+  divDisplayUnicorn.id = "pictureUnicornQuestion";
+  // divDisplayUnicorn.style.display = "block";
+  // divDisplayUnicorn.innerHTML = "";
+  questionId.appendChild(divDisplayUnicorn);
   questionId.appendChild(questionDisplay);
 }
 
