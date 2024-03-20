@@ -133,6 +133,7 @@ function createResponse(answers) {
   }
 
   let resultDisplay = document.createElement("p");
+  resultDisplay.classList.add("resultStyle");
   nextBouton.addEventListener("click", endQuiz);
 
   function endQuiz() {
@@ -140,9 +141,9 @@ function createResponse(answers) {
       confetti();
       nextBouton.innerText = "Try Again";
       let percentage = (count / Questions.length) * 100;
-      resultDisplay.textContent = `Good Answers : ${percentage}%`;
+      resultDisplay.textContent = `Good Job : ${percentage}%`;
       // resultDisplay.style.fontSize = "5rem";
-      resultDisplay.style.textDecoration = "underline";
+      // resultDisplay.style.textDecoration = "underline";
       questionId.innerText = "";
       questionId.appendChild(resultDisplay);
       // questionDisplay.textContent = `Good Answers:${count}`;
