@@ -11,44 +11,80 @@ const questionId = document.getElementById("question");
 // const titre1 = document.getElementById("titre");
 // const poney = document.getElementById("logo");
 
-// function displayStartButton() {
-//   startBouton.style.display = "none";
-// }
-// displayStartButton();
-// startBouton.style.display = "none";
+function UnDisplayMainArea() {
+  displayMain.style.display = "none";
+}
+function displayMainArea() {
+  displayMain.style.display = "block";
+}
+function undisplayHeaderArea() {
+  displayHeader.style.display = "none";
+}
+function displayHeaderArea() {
+  displayHeader.style.display = "block";
+}
+function UndisplayNextButtonFooter() {
+  nextBouton.style.display = "none";
+}
+function displayNextButtonFooter() {
+  nextBouton.style.display = "block";
+}
+function disabledNextButtonFooter() {
+  nextBouton.disabled = true;
+}
+
+function unDisabledNextButtonFooter() {
+  nextBouton.disabled = false;
+}
+
+function unDisplayStartButtonHeader() {
+  startBouton.style.display = "none";
+}
+
 let count = 0;
 let questionIndex = 0;
 
-displayMain.style.display = "none";
+UnDisplayMainArea();
+UndisplayNextButtonFooter();
+
+// displayMain.style.display = "none";
 // nextBouton.style.display = "none";
 
 // document.getElementById("myBtn").disabled = true;
 
 startBouton.addEventListener("click", () => {
-  displayHeader.style.display = "none";
-  displayMain.style.display = "block";
-
-  nextBouton.style.display = "block";
+  undisplayHeaderArea();
+  // displayHeader.style.display = "none";
+  displayMainArea();
+  // displayMain.style.display = "block";
+  displayNextButtonFooter();
+  // nextBouton.style.display = "block";
   createQuestion(Questions[0].question);
   createResponse(Questions[0].answers);
-  nextBouton.disabled = true;
+
+  disabledNextButtonFooter();
+  // nextBouton.disabled = true;
 });
 
 nextBouton.addEventListener("click", () => {
-  displayHeader.style.display = "none";
-  displayMain.style.display = "block";
-  nextBouton.style.display = "block";
-  startBouton.style.display = "none";
-  // titre1.style.display = "none";
-  // poney.style.display = "none";
+  undisplayHeaderArea();
+  // displayHeader.style.display = "none";
+  displayMainArea();
+  // displayMain.style.display = "block";
+  displayNextButtonFooter();
+  // nextBouton.style.display = "block";
+  unDisplayStartButtonHeader();
+  // startBouton.style.display = "none";
   questionIndex++;
   createQuestion(Questions[questionIndex].question);
   createResponse(Questions[questionIndex].answers);
 
-  nextBouton.disabled = true;
+  disabledNextButtonFooter();
+  // nextBouton.disabled = true;
 });
 
 let questionDisplay = document.createElement("p");
+
 function createQuestion(question) {
   questionId.innerText = "";
   questionDisplay.innerText = question;
@@ -58,25 +94,26 @@ function createQuestion(question) {
 function createResponse(answers) {
   let divResponse = document.querySelector(".grid-container");
   divResponse.innerHTML = "";
+
   for (let answer of answers) {
     let buttonResponse = document.createElement("button");
     // buttonResponse.classList.add("button-class");
     buttonResponse.innerText = answer;
     divResponse.appendChild(buttonResponse);
+
     buttonResponse.addEventListener("click", () => {
-      // buttonResponse.innerText = answer;
-      // divResponse.innerText = "";
-
       let isCorrect = answer === Questions[questionIndex].correct;
-
       if (isCorrect) {
-        nextBouton.disabled = false;
+        unDisabledNextButtonFooter();
         buttonResponse.style.backgroundColor = "#1ecdad";
+        buttonResponse.style.border = "none";
         count++;
         console.log(count);
       } else {
         buttonResponse.style.backgroundColor = "#e96f66";
-        nextBouton.disabled = false;
+        buttonResponse.style.border = "none";
+
+        unDisabledNextButtonFooter();
       }
       let responseButtons = document.querySelectorAll(".grid-container button");
       responseButtons.forEach((btn) => {
@@ -90,9 +127,12 @@ function createResponse(answers) {
   function endQuiz() {
     if (questionIndex >= Questions.length) {
       confetti();
-      nextBouton.innerText = "The End";
+      nextBouton.innerText = "Try Again";
       let percentage = (count / Questions.length) * 100;
-      questionDisplay.textContent = `Good Answers : ${count} ${percentage}%`;
+      questionDisplay.textContent = `Good Answers : ${percentage}%`;
+      questionDisplay.style.fontSize = "5rem";
+      questionDisplay.style.textDecoration = "underline";
+
       // questionDisplay.textContent = `Good Answers:${count}`;
       resetQuiz();
       return;
@@ -102,25 +142,7 @@ function createResponse(answers) {
     count = 0;
     questionIndex = 0;
   }
-  // confetti();
-  // validateInput.value = "The End";
-  // maDiv.style.display = "none";
-  // responseDisplay.style.display = "none";
-  // mainDisplay.style.height = "544px";
-
-  // divQuiznResult.style.display = "block";
-
-  // let pResult = document.createElement("p");
-  // pResult.textContent = `Nombre de bonnes réponses : ${count}`;
-  // divQuiznResult.appendChild(pResult);
-
-  // let pResult = document.createElement("p");
-  // pResult.textContent = ` Votre résultat est + `;
 }
-
-// console.log(count++);
-// questionIndex++;
-
 // answers0.innerText = answers[0];
 // answers1.innerText = answers[1];
 // answers2.innerText = answers[2];
