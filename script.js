@@ -89,7 +89,7 @@ nextBouton.addEventListener("click", () => {
   createQuestion(Questions[questionIndex].question);
   createResponse(Questions[questionIndex].answers);
 
-  // disabledNextButtonFooter();
+  disabledNextButtonFooter();
   // nextBouton.disabled = true;
 });
 
