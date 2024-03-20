@@ -1,57 +1,57 @@
 const Questions = [
   {
-    question: "Unicorn can eat corn ?",
-    answers: ["No", "They", "Do", "Yes"],
-    correct: "Do"
+    question: "What does the word unicorn mean ?",
+    answers: ["Nice fur", "4 hooves", "Soft nose", "1 horn"],
+    correct: "1 horn"
   },
   {
     question:
-      "Quelle méthode transforme une chaîne de caractères en nombre entier ?",
-    answers: ["parseInt", "parseFloat", "toString"],
-    correct: "parseInt",
+      "Fill in the blank. There____unicorns in My Little Pony",
+    answers: ["Are", "Are not", "Have never been", "Are probably"],
+    correct: "Are",
   },
   {
-    question: 'Quel est le résultat de "2" + 2 en JavaScript ?',
-    answers: ["4", '"22"', "22", "Erreur"],
-    correct: '"22"',
+    question: "Who first wrote about unicorns ?",
+    answers: ["Shakespeare", "Ancient Greeks", "Chinese Court", "Uncle Bob"],
+    correct: "Chinese Court",
   },
   {
-    question: "Comment appelle-t-on une fonction qui s'appelle elle-même ?",
-    answers: ["Fonction circulaire", "Fonction récursive", "Fonction miroir"],
-    correct: "Fonction récursive",
+    question: "According to the Harry Potter books, what colour is unicorn's blood ?",
+    answers: ["Blue", "Pink", "Silver","Black"],
+    correct: "Silver",
   },
   {
-    question: "Quelle fonction permet de créer un délai en JavaScript ?",
-    answers: ["delay()", "setTimeout()", "wait()"],
-    correct: "setTimeout()",
-  },
-  {
-    question:
-      "Quel est le nom de la fonction qui permet de répéter une action à intervalles réguliers ?",
-    answers: ["setInterval()", "repeat()", "loop()"],
-    correct: "setInterval()",
+    question: "When was the first written record of a unicorn ?",
+    answers: ["400 BC", "1400 AD", "400 AD", "666 AD"],
+    correct: "400 BC",
   },
   {
     question:
-      "Quelle méthode permet de retirer le dernier élément d'un tableau ?",
-    answers: ["shift()", "pop()", "splice()"],
-    correct: "pop()",
-  },
-  {
-    question: "Comment vérifier si une variable est un tableau en JavaScript ?",
-    answers: ["isType()", "typeof", "Array.isArray()"],
-    correct: "Array.isArray()",
+      "What was the name of the toy unicorn in Toy Story 3 ?",
+    answers: ["Trixie", "Wheezy", "Buttercup", "Peanut"],
+    correct: "Buttercup",
   },
   {
     question:
-      'Quelle est la valeur de "null" lorsqu\'elle est convertie en nombre ?',
-    answers: ["0", "1", "undefined", "null"],
-    correct: "0",
+      "Which of these is supposed to be one of a unicorn's magic powers ?",
+    answers: ["Laser vision", "Healing people", "Teleportation", "Breathing fire"],
+    correct: "Healing people",
+  },
+  {
+    question: "What do you call a baby unicorn ?",
+    answers: ["Sparkle", "Unicornlet", "Unicornling", "Uni"],
+    correct: "Sparkle",
   },
   {
     question:
-      'Comment accéder au premier élément d\'un tableau appelé "myArray" ?',
-    answers: ["myArray[1]", "myArray[0]", "myArray.first()", "myArray.one"],
-    correct: "myArray[0]",
+      "Which part of the UK has a unicorn as its national animal ?",
+    answers: ["England", "Wales", "Northern Ireland", "Scotland"],
+    correct: "Scotland",
+  },
+  {
+    question:
+      "Which of these go best with unicorns ?",
+    answers: ["Hurricanes", "Tsunamis", "Rainbows", "Fog"],
+    correct: "Rainbows",
   },
 ];
