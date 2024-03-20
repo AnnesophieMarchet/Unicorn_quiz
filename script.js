@@ -129,7 +129,7 @@ function createResponse(answers) {
       confetti();
       nextBouton.innerText = "Try Again";
       let percentage = (count / Questions.length) * 100;
-      questionDisplay.textContent = `Good Answers : ${percentage}%`;
+      questionDisplay.textContent = `Good Job : ${percentage}%`;
       questionDisplay.style.fontSize = "5rem";
       questionDisplay.style.textDecoration = "underline";
 
