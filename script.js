@@ -4,6 +4,7 @@ const displayBoutonFooter = document.getElementById("btn-div-end");
 const startBouton = document.getElementById("sButton");
 const nextBouton = document.getElementById("nButton");
 const questionId = document.getElementById("question");
+const footerDisplay = document.querySelector("footer");
 // const answers0 = document.getElementById("b1");
 // const answers1 = document.getElementById("b2");
 // const answers2 = document.getElementById("b3");
@@ -40,12 +41,20 @@ function unDisabledNextButtonFooter() {
 function unDisplayStartButtonHeader() {
   startBouton.style.display = "none";
 }
+function displayFooter() {
+  footerDisplay.style.display = "block";
+}
+function unDisplayFooter() {
+  footerDisplay.style.display = "none";
+}
 
 let count = 0;
 let questionIndex = 0;
 
 UnDisplayMainArea();
 UndisplayNextButtonFooter();
+unDisplayFooter();
+// footerDisplay.style.display = "none";
 
 // displayMain.style.display = "none";
 // nextBouton.style.display = "none";
@@ -59,6 +68,7 @@ startBouton.addEventListener("click", () => {
   // displayMain.style.display = "block";
   displayNextButtonFooter();
   // nextBouton.style.display = "block";
+  displayFooter();
   createQuestion(Questions[0].question);
   createResponse(Questions[0].answers);
 
@@ -122,26 +132,34 @@ function createResponse(answers) {
     });
   }
 
+  let resultDisplay = document.createElement("p");
   nextBouton.addEventListener("click", endQuiz);
 
   function endQuiz() {
     if (questionIndex >= Questions.length) {
       confetti();
       nextBouton.innerText = "Try Again";
+
       let percentage = (count / Questions.length) * 100;
-      questionDisplay.textContent = `Good Answers : ${percentage}%`;
-      questionDisplay.style.fontSize = "5rem";
-      questionDisplay.style.textDecoration = "underline";
+
+      resultDisplay.textContent = `Good Answers : ${percentage}%`;
+      resultDisplay.style.fontSize = "5rem";
+      resultDisplay.style.textDecoration = "underline";
+      questionId.innerText = "";
+      questionId.appendChild(resultDisplay);
 
       // questionDisplay.textContent = `Good Answers:${count}`;
       resetQuiz();
       return;
     }
   }
-  function resetQuiz() {
-    count = 0;
-    questionIndex = 0;
-  }
+}
+
+function resetQuiz() {
+  count = 0;
+  questionIndex = 0;
+  resultDisplay.textContent = "";
+  nextBouton.innerText = "Next";
 }
 // answers0.innerText = answers[0];
 // answers1.innerText = answers[1];
