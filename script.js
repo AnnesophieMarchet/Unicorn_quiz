@@ -139,15 +139,12 @@ function createResponse(answers) {
     if (questionIndex >= Questions.length) {
       confetti();
       nextBouton.innerText = "Try Again";
-
       let percentage = (count / Questions.length) * 100;
-
       resultDisplay.textContent = `Good Answers : ${percentage}%`;
-      resultDisplay.style.fontSize = "5rem";
+      // resultDisplay.style.fontSize = "5rem";
       resultDisplay.style.textDecoration = "underline";
       questionId.innerText = "";
       questionId.appendChild(resultDisplay);
-
       // questionDisplay.textContent = `Good Answers:${count}`;
       resetQuiz();
       return;
@@ -156,10 +153,15 @@ function createResponse(answers) {
 }
 
 function resetQuiz() {
+  nextBouton.addEventListener("click", () => {
+    nextBouton.textContent = "Next";
+  });
   count = 0;
   questionIndex = 0;
   resultDisplay.textContent = "";
-  nextBouton.innerText = "Next";
+
+  // nextBouton.innerText = "";
+  // nextBouton.value = "Next";
 }
 // answers0.innerText = answers[0];
 // answers1.innerText = answers[1];
