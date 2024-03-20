@@ -89,7 +89,7 @@ nextBouton.addEventListener("click", () => {
   createQuestion(Questions[questionIndex].question);
   createResponse(Questions[questionIndex].answers);
 
-  disabledNextButtonFooter();
+  // disabledNextButtonFooter();
   // nextBouton.disabled = true;
 });
 
@@ -136,9 +136,35 @@ function createResponse(answers) {
   resultDisplay.classList.add("resultStyle");
   nextBouton.addEventListener("click", endQuiz);
 
+  const pathShape = confetti.shapeFromPath({ path: "M0 10 L5 0 L10 10z" }); // Forme SVG
+
+  const textShape = confetti.shapeFromText({ text: "🦄", scalar: 4 });
+
   function endQuiz() {
     if (questionIndex >= Questions.length) {
-      confetti();
+      for (let index = 0; index <= Math.floor(Math.random() * 20); index++) {
+        confetti({
+          particleCount: 150, // Nombre de confetti à lancer
+          spread: 360, // Angle maximal de dispersion des confettis
+          startVelocity: 30, // Vitesse initiale des confettis
+          origin: {
+            x: Math.random() - 0.2, // Position initiale aléatoire des confettis sur l'axe horizontal
+            y: Math.random(), // Position initiale légèrement plus élevée sur l'axe vertical
+          },
+          colors: ["#1ecdad", "#e9afa3", "#1882d3"], // Couleurs des confettis
+          shapes: [pathShape, textShape], // Formes des confettis
+          scalar: 2, // Taille des confettis
+        });
+        // const element = array[index];
+      }
+
+      // Texte personnalisé
+
+      confetti({
+        shapes: [pathShape, textShape],
+        scalar: 2,
+      });
+
       nextBouton.innerText = "Try Again";
       let percentage = (count / Questions.length) * 100;
       resultDisplay.textContent = `Good Job : ${percentage}%`;
