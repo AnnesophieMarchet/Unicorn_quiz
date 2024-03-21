@@ -4,6 +4,7 @@ const displayBoutonFooter = document.getElementById("btn-div-end");
 const startBouton = document.getElementById("sButton");
 const nextBouton = document.getElementById("nButton");
 const questionId = document.getElementById("question");
+const footerDisplay = document.querySelector("footer");
 // const answers0 = document.getElementById("b1");
 // const answers1 = document.getElementById("b2");
 // const answers2 = document.getElementById("b3");
@@ -40,12 +41,20 @@ function unDisabledNextButtonFooter() {
 function unDisplayStartButtonHeader() {
   startBouton.style.display = "none";
 }
+function displayFooter() {
+  footerDisplay.style.display = "block";
+}
+function unDisplayFooter() {
+  footerDisplay.style.display = "none";
+}
 
 let count = 0;
 let questionIndex = 0;
 
 UnDisplayMainArea();
 UndisplayNextButtonFooter();
+unDisplayFooter();
+// footerDisplay.style.display = "none";
 
 // displayMain.style.display = "none";
 // nextBouton.style.display = "none";
@@ -59,6 +68,7 @@ startBouton.addEventListener("click", () => {
   // displayMain.style.display = "block";
   displayNextButtonFooter();
   // nextBouton.style.display = "block";
+  displayFooter();
   createQuestion(Questions[0].question);
   createResponse(Questions[0].answers);
 
@@ -84,10 +94,16 @@ nextBouton.addEventListener("click", () => {
 });
 
 let questionDisplay = document.createElement("p");
+let divDisplayUnicorn = document.createElement("img");
 
 function createQuestion(question) {
   questionId.innerText = "";
   questionDisplay.innerText = question;
+  divDisplayUnicorn.src = "./assets/unicorn-picture.svg";
+  divDisplayUnicorn.id = "pictureUnicornQuestion";
+  // divDisplayUnicorn.style.display = "block";
+  // divDisplayUnicorn.innerHTML = "";
+  questionId.appendChild(divDisplayUnicorn);
   questionId.appendChild(questionDisplay);
 }
 
@@ -122,26 +138,70 @@ function createResponse(answers) {
     });
   }
 
+  let resultDisplay = document.createElement("p");
+  resultDisplay.classList.add("resultStyle");
   nextBouton.addEventListener("click", endQuiz);
+
+  const pathShape = confetti.shapeFromPath({ path: "M0 10 L5 0 L10 10z" }); // Forme SVG
+
+  const textShape = confetti.shapeFromText({ text: "🦄", scalar: 4 });
 
   function endQuiz() {
     if (questionIndex >= Questions.length) {
-      confetti();
+      for (let index = 0; index <= Math.floor(Math.random() * 10); index++) {
+        confetti({
+          particleCount: 150, // Nombre de confetti à lancer
+          spread: 360, // Angle maximal de dispersion des confettis
+          startVelocity: 30, // Vitesse initiale des confettis
+          origin: {
+            x: Math.random() - 0.2, // Position initiale aléatoire des confettis sur l'axe horizontal
+            y: Math.random(), // Position initiale légèrement plus élevée sur l'axe vertical
+          },
+          colors: ["#1ecdad", "#e9afa3", "#1882d3", "#e96f66"], // Couleurs des confettis
+          shapes: [pathShape, textShape], // Formes des confettis
+          scalar: 2, // Taille des confettis
+        });
+        // const element = array[index];
+      }
+
+      // Texte personnalisé
+
+      confetti({
+        shapes: [pathShape, textShape],
+        scalar: 2,
+      });
+
       nextBouton.innerText = "Try Again";
       let percentage = (count / Questions.length) * 100;
+<<<<<<< HEAD
       questionDisplay.textContent = `Good Job : ${percentage}%`;
       questionDisplay.style.fontSize = "5rem";
       questionDisplay.style.textDecoration = "underline";
 
+=======
+      resultDisplay.textContent = `Good Job : ${percentage}%`;
+      // resultDisplay.style.fontSize = "5rem";
+      // resultDisplay.style.textDecoration = "underline";
+      questionId.innerText = "";
+      questionId.appendChild(resultDisplay);
+>>>>>>> b96ef62d93589ac973f776e67dcb369dbceed639
       // questionDisplay.textContent = `Good Answers:${count}`;
       resetQuiz();
       return;
     }
   }
-  function resetQuiz() {
-    count = 0;
-    questionIndex = 0;
-  }
+}
+
+function resetQuiz() {
+  nextBouton.addEventListener("click", () => {
+    nextBouton.textContent = "Next";
+  });
+  count = 0;
+  questionIndex = 0;
+  resultDisplay.textContent = "";
+
+  // nextBouton.innerText = "";
+  // nextBouton.value = "Next";
 }
 // answers0.innerText = answers[0];
 // answers1.innerText = answers[1];
