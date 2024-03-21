@@ -106,9 +106,9 @@ function createQuestion(question) {
   questionId.appendChild(divDisplayUnicorn);
   questionId.appendChild(questionDisplay);
 }
+let divResponse = document.querySelector(".grid-container");
 
 function createResponse(answers) {
-  let divResponse = document.querySelector(".grid-container");
   divResponse.innerHTML = "";
 
   for (let answer of answers) {
@@ -174,6 +174,7 @@ function createResponse(answers) {
       nextBouton.innerText = "Try Again";
       let percentage = (count / Questions.length) * 100;
       resultDisplay.textContent = `Good Job : ${percentage}%`;
+      divResponse.style.display = "none";
       // resultDisplay.style.fontSize = "5rem";
       // resultDisplay.style.textDecoration = "underline";
       questionId.innerText = "";
@@ -188,6 +189,7 @@ function createResponse(answers) {
 function resetQuiz() {
   nextBouton.addEventListener("click", () => {
     nextBouton.textContent = "Next";
+    divResponse.style.display = "grid";
   });
   count = 0;
   questionIndex = 0;
