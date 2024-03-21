@@ -173,18 +173,11 @@ function createResponse(answers) {
 
       nextBouton.innerText = "Try Again";
       let percentage = (count / Questions.length) * 100;
-<<<<<<< HEAD
-      questionDisplay.textContent = `Good Job : ${percentage}%`;
-      questionDisplay.style.fontSize = "5rem";
-      questionDisplay.style.textDecoration = "underline";
-
-=======
       resultDisplay.textContent = `Good Job : ${percentage}%`;
       // resultDisplay.style.fontSize = "5rem";
       // resultDisplay.style.textDecoration = "underline";
       questionId.innerText = "";
       questionId.appendChild(resultDisplay);
->>>>>>> b96ef62d93589ac973f776e67dcb369dbceed639
       // questionDisplay.textContent = `Good Answers:${count}`;
       resetQuiz();
       return;
