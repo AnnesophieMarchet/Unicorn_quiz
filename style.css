@@ -149,6 +149,21 @@ button:hover {
 footer {
   height: 200px;
 }
+
+.resultStyle {
+  border: 5px solid #e8f1ef;
+  /* padding: 5px; */
+  font-size: 3rem;
+  color: #e8f1ef;
+  border-radius: 20px;
+  padding: 15px;
+  /* background-color: #1882d3; */
+}
+
+#pictureUnicornQuestion {
+  display: none;
+}
+
 @media screen and (min-width: 800px) {
   #header {
     flex-direction: row;
@@ -156,7 +171,7 @@ footer {
   }
 
   .grid-container > button {
-    width: 400px;
+    width: 380px;
     height: 80px;
     font-size: 1.5rem;
   }
@@ -176,6 +191,10 @@ footer {
 
   #question {
     height: 60%;
+    max-width: 900px;
+  }
+  p {
+    margin-left: 50px;
   }
   #logo {
     width: 400px;
@@ -192,11 +211,20 @@ footer {
     height: 60px;
   }
 
-
   #btn-div-end {
     margin-bottom: 40px;
   }
-}
-=======
-}
 
+  .resultStyle {
+    border: 5px solid #e8f1ef;
+    padding: 60px 100px;
+    font-size: 4rem;
+    border-radius: 20px;
+    /* background-color: #1882d3; */
+  }
+
+  #pictureUnicornQuestion {
+    margin-right: 100px;
+    display: block;
+  }
+}
